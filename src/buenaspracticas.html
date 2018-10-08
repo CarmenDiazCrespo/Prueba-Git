@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buenas Practicas</title>
+</head>
+<body>
+        <div class="search-noresults">
+                
+                                            <section class="normal markdown-section">
+                                            
+                                            <h1 id="buenas-prácticas-al-trabajar-con-git">Buenas prácticas al trabajar con Git</h1>
+            <h2 id="sigue-el-gitflow-workflow">Sigue el GitFlow Workflow</h2>
+            <p class="comments-section">El GitFlow Workflow es una metodología de trabajo basada en el división de las distintas etapas de producción de software en distintas ramas del repositorio:<div class="comments-icon"><div class="marker">+</div></div></p>
+            <p><img src="../assets/gitflow.svg" alt="Source: https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow"></p>
+            <ul>
+            <li><strong>master</strong>: En la rama máster se encuentran las <em>releases</em> estables de nuestro software. Esta es la rama que un usuario típico se descargará para usar nuestro software, por lo que todo lo que hay en esta rama debería ser funcional. Sin embargo, puede que las últimas mejoras introducidas en el software no estén disponibles todavía en esta rama.</li>
+            <li><strong>develop</strong>: En esta rama surge de la última release de <strong>master</strong>. En ella se van integrando todas las nuevas características hasta la siguiente release.</li>
+            <li><strong>feature-X</strong>: Cada nueva mejora o característica que vayamos a introducir en nuestro software tendrá una rama que contendrá su desarrollo. Las ramas de <strong>feature</strong> salen de la rama <strong>develop</strong> y una vez completado el desarrollo de la mejora, se vuelven a integrar en <strong>develop</strong>.</li>
+            <li><strong>release-X</strong>: Las ramas de <strong>release</strong> se crean cuando se va a publicar la siguiente versión del software y surgen de la rama <strong>develop</strong> . En estas ramas, el desarrollo de nuevas características se congela, y se trabaja en arreglar bugs y generar documentación. Una vez listo para la publicación, se integra en <strong>master</strong> y se etiqueta con el número de versión correspondiente. Se integran también con <strong>develop</strong>, ya que su contenido ha podido cambiar debido a nuevas mejoras.</li>
+            <li><strong>hotfix-X</strong>: Si nuestro código contiene bugs críticos que es necesario parchear de manera inmediata, es posible crear una rama <strong>hotfix</strong> a partir de la publicación correspondiente en la rama <strong>master</strong>. Esta rama contendrá únicamente los cambios que haya que realizar para parchear el bug. Una vez arreglado, se integrará en <strong>master</strong>, con su etiqueta de versión correspondiente y en <strong>develop</strong>.</li>
+            </ul>
+            <h2 id="mensajes-de-commit">Mensajes de commit</h2>
+            <p class="comments-section">Los mensajes de commit son una herramienta muy útil para el desarrollo de software, ya que nos permiten encontrar cambios concretos en la historia de nuestro repositorio. No obstante, muchas veces no les prestamos toda la atención que se merecen, y escribrimos mensajes de commit que son de muy poca ayuda para nuestros compañeros y para nuestros yo del futuro. Esta sección aporta buenas prácticas a seguir para aprovechar los mensajes de commit al máximo.<div class="comments-icon"><div class="marker">+</div></div></p>
+            <h3 id="escribe-mensajes-de-commit-claros-y-concisos">Escribe mensajes de commit claros y concisos</h3>
+            <p class="comments-section">Las siguentes reglas de estilo harán que tus mensajes de commit sean más claros y concisos:<div class="comments-icon"><div class="marker">+</div></div></p>
+            <ul>
+            <li>Los mensajes de commit tienes dos partes principales: un asunto y un mensaje (como los correos electrónicos). Si el contenido del commit se puede explicar en el asunto, no es necesario incluir un mensaje. Ambas partes deben ir separadas por una línea en blanco.</li>
+            <li>La línea de asunto no debería extenderse más de 50 caracteres, y el cuerpo del mensaje debería tener una extensión máxima (por línea) de 72 caracteres. Esto ayuda a su visualización en distintas plataformas y dispositivos.</li>
+            <li>La línea de asunto debe comenzar con letra mayúscula y terminar sin punto. Piensa, por ejemplo, en el asunto de un correo electrónico.</li>
+            <li>Usa el imperativo en el mensaje de commit. Internamente Git usa el imperativo en los mensajes que genera. Por ejemplo, <code>Merge branch 'feature-refactor'</code> tras fusionar la rama <code>feature-refactor</code>. Para mantener la coherencia de todos los mensajes de commit, adoptaremos la convención de Git de usar el imperativo.</li>
+            </ul>
+            <h3 id="usa-el-mensaje-de-commit-para-aportar-contexto-y-explicar-el-por-qué-detras-de-un-cambio">Usa el mensaje de commit para aportar contexto y explicar el por qué detras de un cambio.</h3>
+            <p class="comments-section">La principal utilidad de un mensaje de commit no es explicar cuáles son los cambios que realizará ese commit, ya que se pueden consultar en el diff del commit. La principal utilidad del mensaje de commit es explicar el por qué detras de esos cambios.<div class="comments-icon"><div class="marker">+</div></div></p>
+            <p class="comments-section">Por tanto, cuando el por qué de un cambio no quede suficientemente claro con el asunto y el diff del commit, usaremos el cuerpo del mensaje de commit para aportar un contexto y un por qué a dichos cambios. Esto es especialmente importante si existen soluciones alternativas a la implementada en el commit, ya que así los futuros mantenedores del código pueden saber por qué se elegió esa solución frente a otras alternativas.<div class="comments-icon"><div class="marker">+</div></div></p>
+            <p class="comments-section">Si el cambio realizado, además, puede tener consecuencias inesperadas o efectos secundarios en el resto del código, es importante especificarlo también en el mensaje de commit.<div class="comments-icon"><div class="marker">+</div></div></p>
+            
+                                            
+                                            </section>
+                                        
+                </div>
+</body>
+</html>
